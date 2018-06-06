@@ -14,10 +14,13 @@
 	<script src="https://ljh7772.github.io/jihun/WebContent/js/jquery-3.3.1.js"></script>
 	<script src="https://ljh7772.github.io/jihun/WebContent/js/jquery-3.3.1.min.js"></script>
     
-    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?signed_in=true"></script> -->
     
     <link href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+     
+     
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=S_ugxpkl_JcAmtZbPyns&submodules=geocoder"></script>
      
     <script type="text/javascript">
     //$(document).ready(function(){
@@ -28,7 +31,7 @@
    	https://ljh7772.github.io/jihun/WebContent/images/
    	https://ljh7772.github.io/jihun/WebContent/images/
     */    
-    
+    /*
 	var latlng = "37.378100, 127.112298"; //구글맵에서 위치 검색 후, 맵을 클릭하면 나오는 하단의 좌표를 입력한다.
 
 	function initMap() {
@@ -53,6 +56,7 @@
 			map : map
 		});
 	}
+	*/
 	$(function(e) {
 		//initMap();
 		
@@ -286,6 +290,8 @@ body {
 		------------------------------------------------------------
 		<h1>오시는길</h1>
 		<img src="https://ljh7772.github.io/jihun/WebContent/images/onlyMap.jpg" class="img100"/>
+		<div class="map_wrap" id="map"></div></div>
+		
 		<h2>주소</h2>
 		<h3>
 			수원시 장안구 경수대로 950<br/>
@@ -318,7 +324,10 @@ body {
 		<div style="text-align: center">
 		<a href = "https://m.map.naver.com/map.nhn?pinId=100828507&pinType=site" style="text-decoration: none;"><img src="https://ljh7772.github.io/jihun/WebContent/images/icon/naverMap.png" width="50px;"/><!-- 네이버 길찾기 --></a>
 		</div>
-		<!-- 
+		
+		
+	 <div class="contact_wrap">
+	 	<!-- 
 		<table id="phone">
 			<tbody>
 				<tr>
@@ -331,13 +340,10 @@ body {
 				</tr>
 			</tbody>
 		</table>
-		 -->
-		 
-		<div class="contact_wrap">
-			<a href="tel:010-5882-9476" class="bg1"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/device-iPhone-smartphone-vertical-glyph-128.png" alt="tel">엄마전화</a>
-			<a href="tel:010-6282-9476" class="bg2"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/device-iPhone-smartphone-vertical-glyph-128.png" alt="tel">아빠전화</a>
-			<a href="mailto:ljh7772@hotmail.com" class="bg3"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-email-envelope-mail-outline-stroke-128.png" alt="email" />이메일</a>
-		</div>
+		-->
+		<a href="tel:010-5882-9476" class="bg1"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/device-iPhone-smartphone-vertical-glyph-128.png" alt="tel">엄마전화</a>
+		<a href="tel:010-6282-9476" class="bg2"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/device-iPhone-smartphone-vertical-glyph-128.png" alt="tel">아빠전화</a>
+		<a href="mailto:ljh7772@hotmail.com" class="bg3"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/common-email-envelope-mail-outline-stroke-128.png" alt="email" />이메일</a>
 	</div>
 </div>
 </body>
