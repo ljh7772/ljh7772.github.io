@@ -7,7 +7,7 @@
     <meta property="og:site_name" content="babyParty"/>
     <meta property="og:title" content="지훈이의 첫번째 생일잔치에 초대합니다."/>
     <meta property="og:description" content="2018년 7월 1일 오후12시, 수원 드마리스"/>
-    <meta property="og:image" content="/jihun/images/2.jpg"/>
+    <meta property="og:image" content="https://ljh7772.github.io/jihun/WebContent/images/2.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://ljh7772.github.io/jihun/WebContent/"/>
     
@@ -15,6 +15,8 @@
 	<script src="https://ljh7772.github.io/jihun/WebContent/js/jquery-3.3.1.min.js"></script>
     
     <script src="https://maps.googleapis.com/maps/api/js?signed_in=true"></script>
+    
+    <link href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
      
     <script type="text/javascript">
@@ -24,9 +26,9 @@
     
     
     /*
-    https://ljh7772.github.io/jihun/WebContent/
-   	/jihun/images/
-   	/jihun/images/
+    https://ljh7772.github.io/jihun/WebContent/images/
+   	https://ljh7772.github.io/jihun/WebContent/images/
+   	https://ljh7772.github.io/jihun/WebContent/images/
     */    
     
 	var latlng = "37.378100, 127.112298"; //구글맵에서 위치 검색 후, 맵을 클릭하면 나오는 하단의 좌표를 입력한다.
@@ -54,7 +56,7 @@
 		});
 	}
 	$(function(e) {
-		initMap();
+		//initMap();
 		
 		var targetEle = $("#autoplay");
 		targetEle.find("img").css("cssText" , "width:" + targetEle.width() + "px !important;");
@@ -84,69 +86,208 @@
     
 	
 	<style>
-	*{
-		margin : 0;
-		padding : 0;
-		-webkit-tap-highlight-color: rgba(0,0,0,0);
-		-moz-tap-highlight-color : rgba(0,0,0,0);
-		-webkit-t4ext-size-adjust: 100%;
-	}
-	
-	html.body{
-		height:100%;
-	}
-	
-	#wrap{
-		max-width:500px;
-		margin : 0 auto;
-		background-color:#fff;
-		height:auto;
-	}
-	
-	.img100{
-		max-width : 100%;
-		width: auto !important;
-		width: 100%;
-	}
-	
-	.content_wrap{
-		font-size : 14px;
-		text-align:center;
-		padding-top:15px;
-		margin: 0 15px;
-		color:#8d968c;
-		line-height:20px;
-		
-	}
-	
-	.content_wrap h1{
-		font-size : 15px;
-		font-weight : bold;
-		text-align : center;
-		padding-bottom : 15px;
-		color : #50a27f;
-	}
-	
-	.content_wrap h1 img{
-		height : 40px;
-	}
+	* {
+	margin: 0;
+	padding: 0;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-text-size-adjust: 100%;
+}
+
+html,body {
+	height: 100%;
+}
+
+body {
+	background-color: #eee;
+}
+
+#wrap {
+	max-width: 800px;
+	margin: 0 auto;
+	background-color: #fff;
+	height: auto;
+}
+
+.img100 {
+	max-width: 100%;
+	width: auto !important;
+	width: 100%;
+}
+
+#autoplay, .slide_wrap {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+}
+
+.content_wrap {
+	font-size: 14px;
+	text-align: center;
+	padding-top: 15px;
+	margin: 0 15px;
+	color: #8d968c;
+	line-height: 20px;
+}
+
+.content_wrap h1 {
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 15px;
+	color: #50a27f;
+}
+
+.content_wrap h1 img {
+	height: 40px;
+	vertical-align: middle;
+}
+
+.contact_wrap {
+	text-align: center;
+	padding-top: 15px;
+}
+
+.contact_wrap a {
+	font-size: 15px;
+	color: #2f302c;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	min-width: 40px;
+	border-radius: 5px;
+}
+
+.contact_wrap a.bg1 {
+	background-color: #bbedc8;
+}
+
+.contact_wrap a.bg2 {
+	background-color: #9bddbe;
+}
+
+.contact_wrap a.bg3 {
+	background-color: #ccf2cb;
+}
+
+.contact_wrap img {
+	height: 15px;
+	padding-right: 5px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+}
+
+.date_wrap {
+	margin: 0 15px;
+	padding: 20px 0 0 0;
+	text-align: left;
+	font-size: 13px;
+}
+
+.date_wrap img {
+	height: 15px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+	padding-right: 5px;
+}
+
+.addr_wrap {
+	margin: 0 15px;
+	padding: 10px 0;
+	text-align: left;
+	font-size: 13px;
+}
+
+.addr_wrap img {
+	height: 15px;
+	vertical-align: middle;
+	position: relative;
+	top: -2px;
+	padding-right: 5px;
+}
+
+.map_wrap {
+	margin: 0 15px;
+	height: 200px;
+	background-color: #ddd;
+	text-align: center;
+	font-size: 14px;
+}
+
+.tras_wrap {
+	margin: 0 15px;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.tras_wrap div {
+	padding-top: 10px;
+}
+
+.tras_wrap div.what {
+	color: #888;
+}
+
+.tras_wrap div.is {
+	color: #8d968c;
+	font-weight: bold;
+	margin: 0 20px;
+}
+
+.tras_wrap img {
+	height: 14px;
+	vertical-align: middle;
+	position: relative;
+	top: -3px;
+	padding-right: 5px;
+}
+.copy {
+	font-size:12px;
+	color:#888;
+	text-align:center;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+.slick-prev,.slick-next {
+	display:none !important;
+}
 	</style>
 
     
 </head>
 <body>
+
+<h1>""지훈이의 첫번째 생일"</h1>
+
+<div id="wrap">
+	<div class="slide_wrap">
+		<div id="autoplay" style="display:none;">
+			<!-- //이미지 추가 -->
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/016.jpg" class="img100" />
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/038.jpg" class="img100" />
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/079.jpg" class="img100" />
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/083.jpg" class="img100" />
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/085.jpg" class="img100" />
+			<img src="https://ljh7772.github.io/jihun/WebContent/images/w/086.jpg" class="img100" />
+		</div>
+	</div>
+</div>
+	
 <div class="section" id="page1">
 	<div class="header" align="center">
 		<h1>지훈이의 첫번째 생일</h1>
-		<img src="/jihun/images/1.jpg" width="100%" class="img100"/>
-		<img src="/jihun/images/2.jpg" width="100%" class="img100"/>
+<!-- 				<img src="https://ljh7772.github.io/jihun/WebContent/images/1.jpg" width="100%" class="img100"/>
+				<img src="https://ljh7772.github.io/jihun/WebContent/images/2.jpg" width="100%" class="img100"/> -->
 		<h3>소중한 우리 지훈이의 첫생일을<br/> 함께 축하해주세요.</h3>
 		------------------------------------------------------------
 		<h3>7월 1일 | 일요일 | 오후 12시 | 드마리스 북수원점</h3>
 		<h3>아빠 임종희 / 엄마 김태정</h3>
 		------------------------------------------------------------
 		<h1>오시는길</h1>
-		<img src="/jihun/images/onlyMap.jpg" width="100%"/>
+		<img src="https://ljh7772.github.io/jihun/WebContent/images/onlyMap.jpg" width="100%"/>
 		<h2>주소</h2>
 		<h3>
 			수원시 장안구 경수대로 950<br/>
@@ -171,7 +312,7 @@
 		</h5>
 		------------------------------------------------------------
 		<h1>드마리스 건물  지하주차장 만차시 주차안내</h1>
-		<img src="/jihun/images/onlyParkMap.png" width="100%"/>
+		<img src="https://ljh7772.github.io/jihun/WebContent/images/onlyParkMap.png" width="100%"/>
 		<h4>
 			드마리스 건물 지하 주차장 만차시 빨강선을 따라 이동 후 장안구청 내에 주차하시면 예약실에서 주차요금을 드립니다.(장안구청에서 도보 3분이내)
 		</h4>
