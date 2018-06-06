@@ -7,16 +7,49 @@
   <head>
       <meta charset="UTF-8">
       <title>네이버 지도 API - 주소로 지도 표시하기</title>
-      <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=S_ugxpkl_JcAmtZbPyns&submodules=geocoder"></script> -->
-      <script type="text/javascript" src="http://openapi.map.naver.com/openapi/v2/maps.js?clientId=S_ugxpkl_JcAmtZbPyns"></script>
+      <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=S_ugxpkl_JcAmtZbPyns&submodules=geocoder"></script>
+      <!-- <script type="text/javascript" src="http://openapi.map.naver.com/openapi/v2/maps.js?clientId=S_ugxpkl_JcAmtZbPyns"></script> -->
       
   </head>
   <body>
-    <!-- <div id="map" style="width:100%;height:400px;"></div> -->
-    <div id="testMap" style="border:1px solid #000; width:500px; height:400px; margin:20px;"></div>
+    <div id="map" style="width:100%;height:400px;"></div>
+    <!-- <div id="testMap" style="border:1px solid #000; width:500px; height:400px; margin:20px;"></div> -->
     <script>
-    /*
-      var map = new naver.maps.Map('map');
+      //var map = new naver.maps.Map('map');
+      var map = new naver.maps.Map('map',{
+    	  point: oPoint,
+          zoom: 10,
+          enableWheelZoom: true,
+          enableDragPan: true,
+          enableDblClickZoom: false,
+          mapMode: 0,
+          activateTrafficMap: false,
+          activateBicycleMap: false,
+          minMaxLevel: [1, 14],
+          size: new nhn.api.map.Size(500, 400)
+		});
+      
+      
+      var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
+      themeMapButton = new nhn.api.map.ThemeMapBtn(); // - 자전거 지도 버튼 선언
+      mapTypeChangeButton = new nhn.api.map.MapTypeBtn(); // - 지도 타입 버튼 선언
+      var trafficButton = new nhn.api.map.TrafficMapBtn(); // - 실시간 교통 지도 버튼 선언
+      trafficButton.setPosition({top: 10, right: 110}); // - 실시간 교통 지도 버튼 위치 지정
+      mapTypeChangeButton.setPosition({top: 10, left: 50}); // - 지도 타입 버튼 위치 지정
+      themeMapButton.setPosition({top: 10, right: 10}); // - 자전거 지도 버튼 위치 지정
+      mapZoom.setPosition({left: 10, top: 10}); // - 줌 컨트롤 위치 지정.
+      map.addControl(mapZoom);
+      map.addControl(themeMapButton);
+      map.addControl(mapTypeChangeButton);
+      map.addControl(trafficButton);
+
+
+      var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
+      mapZoom.setPosition({left: 80, bottom: 40}); // - 줌 컨트롤 위치 지정
+      map.addControl(mapZoom); // - 줌 컨트롤 추가.
+
+      
+      
       //var myaddress = '불정로 6';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
       var myaddress = '경기도 수원시 장안구 경수대로 950 아울렛쇼핑타운';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
       naver.maps.Service.geocode({address: myaddress}, function(status, response) {
@@ -52,9 +85,8 @@
         	  content: '<h4>3층 드마리스</h4>'
           });
       });
-          */
           
-          
+          /*
          var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
          nhn.api.map.setDefaultPoint('LatLng');
          oMap = new nhn.api.map.Map('testMap', {
@@ -86,7 +118,7 @@
          var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
          mapZoom.setPosition({left: 80, bottom: 40}); // - 줌 컨트롤 위치 지정
          oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
-
+*/
           
       
       </script>
