@@ -14,7 +14,9 @@
 	<script src="https://ljh7772.github.io/jihun/WebContent/js/jquery-3.3.1.js"></script>
 	<script src="https://ljh7772.github.io/jihun/WebContent/js/jquery-3.3.1.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" rel="stylesheet" type="text/css">
+	<link href="https://ljh7772.github.io/jihun/WebContent/css/common.css" rel="stylesheet" type="text/css"/>
+	
+    <link href="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css" rel="stylesheet" type="text/css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
      
     <!-- https://ljh7772.github.io/jihun/WebContent/index.html -->
@@ -23,7 +25,6 @@
     <!-- http://221.153.121.234:8080/jihun/map.html -->
     <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=QAkd8PQAeCtZh2mMpjtV&submodules=geocoder"></script> -->
       
-     
     <script type="text/javascript">
 	$(function(e) {
 		var targetEle = $("#autoplay");
@@ -50,190 +51,9 @@
 		});
 		
 	});
-	
-	
-	
-  
     </script>
-    
-	
-<style>
-* {
-	/* margin: 0;
-	padding: 0; */
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
-	-webkit-text-size-adjust: 100%;
-}
-
-html,body {
-	height: 100%;
-}
-
-body {
-	background-color: #eee;
-}
-
-#wrap {
-	max-width: 500px;
-	margin: 0 auto;
-	background-color: #fff;
-	height: auto;
-}
-
-.img100 {
-	max-width: 100%;
-	width: auto !important;
-	width: 100%;
-}
-
-#autoplay, .slide_wrap {
-	position:relative;
-	width:100%;
-	overflow:hidden;
-}
-
-.content_wrap {
-	font-size: 14px;
-	text-align: center;
-	padding-top: 15px;
-	margin: 0 15px;
-	color: #8d968c;
-	line-height: 20px;
-}
-
-.content_wrap h1 {
-	font-size: 15px;
-	font-weight: bold;
-	text-align: center;
-	padding-bottom: 15px;
-	color: #50a27f;
-}
-
-.content_wrap h1 img {
-	height: 40px;
-	vertical-align: middle;
-}
-
-.contact_wrap {
-	text-align: center;
-	padding-top: 15px;
-}
-
-.contact_wrap a {
-	font-size: 15px;
-	color: #2f302c;
-	font-weight: bold;
-	text-decoration: none;
-	display: inline-block;
-	padding: 10px;
-	min-width: 40px;
-	border-radius: 5px;
-}
-
-.contact_wrap a.bg1 {
-	background-color: #bbedc8;
-}
-
-.contact_wrap a.bg2 {
-	background-color: #9bddbe;
-}
-
-.contact_wrap a.bg3 {
-	background-color: #ccf2cb;
-}
-
-.contact_wrap img {
-	height: 15px;
-	padding-right: 5px;
-	vertical-align: middle;
-	position: relative;
-	top: -2px;
-}
-
-.date_wrap {
-	margin: 0 15px;
-	padding: 20px 0 0 0;
-	text-align: left;
-	font-size: 13px;
-}
-
-.date_wrap img {
-	height: 15px;
-	vertical-align: middle;
-	position: relative;
-	top: -2px;
-	padding-right: 5px;
-}
-
-.addr_wrap {
-	margin: 0 15px;
-	padding: 10px 0;
-	text-align: left;
-	font-size: 13px;
-}
-
-.addr_wrap img {
-	height: 15px;
-	vertical-align: middle;
-	position: relative;
-	top: -2px;
-	padding-right: 5px;
-}
-
-.map_wrap {
-	margin: 0 15px;
-	height: 200px;
-	background-color: #ddd;
-	text-align: center;
-	font-size: 14px;
-}
-
-.tras_wrap {
-	margin: 0 15px;
-	font-size: 14px;
-	padding-bottom: 20px;
-}
-
-.tras_wrap div {
-	padding-top: 10px;
-}
-
-.tras_wrap div.what {
-	color: #888;
-}
-
-.tras_wrap div.is {
-	color: #8d968c;
-	font-weight: bold;
-	margin: 0 20px;
-}
-
-.tras_wrap img {
-	height: 14px;
-	vertical-align: middle;
-	position: relative;
-	top: -3px;
-	padding-right: 5px;
-}
-.copy {
-	font-size:12px;
-	color:#888;
-	text-align:center;
-	padding-top:15px;
-	padding-bottom:15px;
-}
-.slick-prev,.slick-next {
-	display:none !important;
-}
-	</style>
-
-    
 </head>
 <body>
-
-
-
 	<div class="header" align="center">
 		<h1>지훈이의 첫번째 생일</h1>
 		<div id="wrap">
@@ -280,7 +100,7 @@ body {
 			<br/>
 		</h5>
 		
-		<div id="map" style="width:700px;height:300px;"></div>
+		<div id="map" style="width:600px;height:200px;"></div>
 		<script type="text/javascript">
 		
 		
@@ -296,7 +116,6 @@ body {
 		
 		var myaddress = '경기도 수원시 장안구 경수대로 950 아울렛쇼핑타운';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
 		naver.maps.Service.geocode({address: myaddress}, function(status, response) {
-		  
 		  if (status !== naver.maps.Service.Status.OK) {
 		      return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
 		  }
@@ -328,8 +147,6 @@ body {
 			  content: '<h4>3층<br/>드마리스</h4>'
 		  });
 		});
-		
-		
 		</script>
 			
 		------------------------------------------------------------
