@@ -15,3 +15,15 @@ function showNext(){
 				},500);
 			}
 		}
+		
+		
+		
+		
+		// Preload an image by its index in the items array
+		function preload(index){
+
+			setTimeout(function(){
+				showImage(index);
+			}, 1000);
+		}
+		
