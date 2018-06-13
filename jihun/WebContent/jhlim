@@ -1,0 +1,17 @@
+function showNext(){
+
+			// If this is not the last image
+			if(index+1 < items.length){
+				index++;
+				offsetSlider(index);
+				preload(index+1);
+			}
+
+			else{
+				// Trigger the spring animation
+				slider.addClass('rightSpring');
+				setTimeout(function(){
+					slider.removeClass('rightSpring');
+				},500);
+			}
+		}
